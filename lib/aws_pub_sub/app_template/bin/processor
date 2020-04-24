@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require_relative "../app"
+
+runner = App::Runner.new(ENV.fetch("SQS_QUEUE_NAME"))
+process_name = "RENAME_ME"
+
+AwsPubSub::Subscriber::ScriptRunner.new(runner, process_name).run
