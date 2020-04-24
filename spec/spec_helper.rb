@@ -1,5 +1,14 @@
+require "ostruct"
+
 require "bundler/setup"
 require "aws_pub_sub"
+require "dotenv"
+
+ENV['APP_ENV'] = 'test'
+
+Dotenv.load
+
+Dir[__dir__ + "/support/**/*.rb"].sort.each { |f| require f }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -10,5 +19,12 @@ RSpec.configure do |config|
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
+  end
+
+  config.include AwsPubSub::AwsSpecFuckery
+  config.include AwsPubSub::AppDataSpecHelper
+  
+  config.before do
+    stub_aws_credential_check
   end
 end

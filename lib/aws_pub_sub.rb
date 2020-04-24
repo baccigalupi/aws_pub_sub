@@ -1,3 +1,5 @@
+require "aws-sdk"
+
 require "aws_pub_sub/version"
 
 require "aws_pub_sub/config/aws_config"
