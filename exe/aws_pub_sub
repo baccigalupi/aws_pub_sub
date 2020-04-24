@@ -1,3 +1,12 @@
 #!/usr/bin/env ruby
 
-require "aws_pub_sub"
+require_relative "../lib/aws_pub_sub"
+
+path = ARGV.first
+
+if path
+  AwsPubSub::Generate.new(path).run
+else
+  puts "Nope, can't do that.\nWhat about: aws_pub_sub path-to-new-app"
+  exit 1
+end
