@@ -18,6 +18,7 @@ module AwsPubSub
       rescue => e
         message_data.abort = true
         log_error(e)
+        log_result
         log_conclusion
       end
 
