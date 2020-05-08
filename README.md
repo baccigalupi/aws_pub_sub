@@ -28,8 +28,14 @@ bundler and a Gemfile to get it installed.
     ```
 3. Create a gemset if you want to keep your gems isolated
 4. `bundle install` from on the command line.
-5. Next use the app generator to create a project: `aws_pub_sub .`, where `.` 
-   indicates the current directory.
+
+Bin stubs don't work on repository installed gems, but you can a console with `bundle console`.
+
+Then you can do this command:
+
+```ruby
+  AwsPubSub::Generate.new('.').run
+```
 
 ### Tests
 
