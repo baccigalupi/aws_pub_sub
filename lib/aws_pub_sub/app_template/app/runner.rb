@@ -6,7 +6,7 @@ module App
       ProcessMessage
     end
 
-    def wrap_data(message)
+    def wrap_message(message)
       MessageData.new(message)
     end
 

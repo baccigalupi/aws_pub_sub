@@ -10,7 +10,7 @@ module AwsPubSub
 
     def run
       copy_templates
-      mv_gitignore
+      mv_dotfiles
     end
 
     def copy_templates
@@ -18,8 +18,16 @@ module AwsPubSub
       Dir["#{template_dir}/*"].each{ |f| FileUtils.cp_r(f, path) }
     end
 
-    def mv_gitignore
-      FileUtils.mv("#{path}/gitignore", "#{path}/.gitignore")
+    def mv_dotfiles
+      [
+        "gitignore",
+        "env",
+        "env.sample",
+        "ruby-version",
+        "ruby-gemset"
+      ].each do |filename|
+        FileUtils.mv("#{path}/#{filename}", "#{path}/.#{filename}")
+      end
     end
 
     def template_dir

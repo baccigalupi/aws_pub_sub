@@ -15,21 +15,21 @@ The app deploys to heroku and just goes.
 
 ## Installation & usage
 
-Install the gem first with this command:
+The gem is not yet on RubyGems and maybe won't be. So, you will need to use 
+bundler and a Gemfile to get it installed.
 
-```bash
-  gem install aws_pub_sub
-```
-
-Once you have the gem, you can use it to install the app:
-
-```bash
-    aws_pub_sub install my_path
-```
-
-### Bundle install
-
-The app generator creates a bundle file for you. So just run `bundle install` to get your dependencies.
+1. Create a directory
+2. Create a Gemfile with this content:
+    ```Gemfile
+      ruby "2.6.6"
+      source "https://rubygems.org"
+      git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
+      gem "aws_pub_sub", github: "baccigalup/aws_pub_sub"
+    ```
+3. Create a gemset if you want to keep your gems isolated
+4. `bundle install` from on the command line.
+5. Next use the app generator to create a project: `aws_pub_sub .`, where `.` 
+   indicates the current directory.
 
 ### Tests
 
