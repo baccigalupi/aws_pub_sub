@@ -24,7 +24,7 @@ bundler and a Gemfile to get it installed.
       ruby "2.6.6"
       source "https://rubygems.org"
       git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
-      gem "aws_pub_sub", github: "baccigalup/aws_pub_sub"
+      gem "aws_pub_sub", github: "baccigalupi/aws_pub_sub"
     ```
 3. Create a gemset if you want to keep your gems isolated
 4. `bundle install` from on the command line.
