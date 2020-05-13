@@ -1,4 +1,4 @@
-module ContaktInboundEmail
+module App
   class ProcessMessage
     class Parse < AwsPubSub::Subscriber::ProcessStep
       def process

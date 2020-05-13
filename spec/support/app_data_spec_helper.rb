@@ -21,7 +21,7 @@ module AwsPubSub
     end
 
     def app_data
-      ContaktInboundEmail::AppData.new(create_logger, database)
+      App::AppData.new(create_logger, database)
     end
 
     def clean_up_database

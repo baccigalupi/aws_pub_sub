@@ -11,6 +11,7 @@ module AwsPubSub
     def run
       copy_templates
       mv_dotfiles
+      create_log_dir
     end
 
     def copy_templates
@@ -28,6 +29,11 @@ module AwsPubSub
       ].each do |filename|
         FileUtils.mv("#{path}/#{filename}", "#{path}/.#{filename}")
       end
+    end
+
+    def create_log_dir
+      FileUtils.mkdir_p("log")
+      FileUtils.touch("log/.gitkeep")
     end
 
     def template_dir

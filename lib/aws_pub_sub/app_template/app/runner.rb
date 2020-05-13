@@ -1,5 +1,3 @@
-require ""
-
 module App
   class Runner < AwsPubSub::Subscriber::Runner
     def processor_class
