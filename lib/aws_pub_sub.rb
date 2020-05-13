@@ -1,4 +1,7 @@
-require "aws-sdk"
+require "aws-sdk-core"
+require "aws-sdk-s3"
+require "aws-sdk-sns"
+require "aws-sdk-sqs"
 
 require_relative "aws_pub_sub/version"
 
