@@ -35,7 +35,7 @@ module AwsPubSub
 
       def log_result
         return unless result
-        logger.debug(
+        logger.info(
           "#{log_prefix} Result #{message_id}\n  #{result}"
         )
       end

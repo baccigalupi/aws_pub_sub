@@ -51,11 +51,11 @@ RSpec.describe AwsPubSub::Subscriber::ProcessStep do
       )
     end
 
-    it "also logs a debug statemest with the result" do
+    it "also logs a info statemest with the result" do
       GoodProcessStep.new(message_data, app_data).run
 
       expect(logger_content).to match(
-        /DEBUG.*GoodProcessStep Result message-id.*hey this worked/m
+        /INFO.*GoodProcessStep Result message-id.*hey this worked/m
       )
     end
 
