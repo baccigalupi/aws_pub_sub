@@ -15,7 +15,8 @@ module AwsPubSub
       end
 
       def database_name
-        "contakt_web_#{app_env}"
+        base = ENV.fetch("DATABASE_BASE_NAME")
+        "#{base}_#{app_env}"
       end
 
       def url
