@@ -30,7 +30,7 @@ module AwsPubSub
       end
 
       def log_to_file?
-        env === "test"
+        ENV['LOG_TO_STDOUT'] != "true" && env == "test"
       end
     end
   end
